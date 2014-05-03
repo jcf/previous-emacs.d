@@ -27,6 +27,7 @@
   (load (f-expand file user-emacs-directory)))
 
 (setq inhibit-startup-message t)
+(setq is-mac (equal system-type 'darwin))
 
 (use-package color-theme-monokai
   :init
@@ -36,7 +37,7 @@
 (load-x "misc")
 (load-x "packages")
 
-(when (eq system-type 'darwin)
+(when is-mac
   (load-x "osx"))
 
 (require 'server)
