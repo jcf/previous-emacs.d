@@ -1,0 +1,14 @@
+/.cask
+/.mc-lists.el
+/ac-comphist.dat
+/auto-save-list
+/eshell/history
+/eshell/lastdir
+/flycheck*.el
+/places
+/projectile-bookmarks.eld
+/projectile.cache
+/sandbox
+/tramp
+/url
+/var
