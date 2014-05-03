@@ -5,24 +5,15 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-benchmarking)
+(require 'init-packages)
+(require 'init-utils)
+(require 'init-exec-path)
 
 (defconst *is-a-mac* (eq system-type 'darwin))
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
-
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-(require 'pallet)
-
-(require 's)
-(require 'f)
-(require 'git)
-(require 'ert)
-(require 'evm)
-(require 'dash)
-(require 'use-package)
 
 (defun load-x (file)
   "Load FILE relative to `user-emacs-directory'."

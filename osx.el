@@ -41,10 +41,5 @@
 ;;    brew install coreutils
 (setq insert-directory-program "gls")
 
-;; Setup environment variables from the user's shell.
-(use-package exec-path-from-shell
-  :config
-  (exec-path-from-shell-initialize))
-
 (provide 'osx)
 ;;; osx.el ends here
