@@ -1,3 +1,11 @@
+;;; init.el --- Setup Emacs
+
+;;; Commentary:
+
+;;; This is where all the magic happens.
+
+;;; Code:
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
@@ -27,17 +35,14 @@
 (load-x "defuns")
 (load-x "misc")
 (load-x "packages")
-(load-x "evil-custom")
-(load-x "helm-custom")
-(load-x "powerline-custom")
-
-(load-x "ruby-custom")
 
 (when (eq system-type 'darwin)
   (load-x "osx"))
 
-
-;;;; Bindings
+(load-x "evil-custom")
+(load-x "helm-custom")
+(load-x "powerline-custom")
+(load-x "ruby-custom")
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-c C-m") 'execute-extended-command)
@@ -57,3 +62,5 @@
 (bind-key "C-c k" 'delete-this-buffer-and-file)
 
 (bind-key "C-M-h" 'backward-kill-word)
+
+;;; init.el ends here
