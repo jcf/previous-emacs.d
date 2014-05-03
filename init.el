@@ -39,6 +39,10 @@
 (when (eq system-type 'darwin)
   (load-x "osx"))
 
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
 (load-x "evil-custom")
 (load-x "helm-custom")
 (load-x "powerline-custom")
