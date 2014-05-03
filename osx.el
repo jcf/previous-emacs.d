@@ -6,6 +6,8 @@
 
 ;;; Code:
 
+(require 'use-package)
+
 ;; Use command as meta key, leave option alone
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
@@ -38,6 +40,11 @@
 ;;    brew install xz
 ;;    brew install coreutils
 (setq insert-directory-program "gls")
+
+;; Setup environment variables from the user's shell.
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
 
 (provide 'osx)
 ;;; osx.el ends here
