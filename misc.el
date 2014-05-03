@@ -31,6 +31,9 @@
 
 (setq redisplay-dont-pause t)
 
+;; Make backups of files, even when they're in version control
+(setq vc-make-backup-files t)
+
 ;; Keep Emacs cruft in a platform-specific tmp directory
 (setq
  backup-directory-alist `((".*" . ,temporary-file-directory))
