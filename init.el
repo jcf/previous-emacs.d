@@ -1,10 +1,12 @@
 ;;; init.el --- Setup Emacs
-
 ;;; Commentary:
-
 ;;; This is where all the magic happens.
-
 ;;; Code:
+
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-benchmarking)
+
+(defconst *is-a-mac* (eq system-type 'darwin))
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
@@ -27,7 +29,6 @@
   (load (f-expand file user-emacs-directory)))
 
 (setq inhibit-startup-message t)
-(setq is-mac (equal system-type 'darwin))
 
 (use-package color-theme-monokai
   :init
@@ -37,7 +38,7 @@
 (load-x "misc")
 (load-x "packages")
 
-(when is-mac
+(when *is-a-mac*
   (load-x "osx"))
 
 (require 'server)
@@ -49,4 +50,10 @@
 (load-x "powerline-custom")
 (load-x "ruby-custom")
 
+(add-hook 'after-init-hook
+          (lambda ()
+            (message "Initialisation took %.2fms"
+                     (jcf/time-subtract-millis
+                      after-init-time
+                      before-init-time))))
 ;;; init.el ends here
