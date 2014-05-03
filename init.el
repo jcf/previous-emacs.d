@@ -48,23 +48,4 @@
 (load-x "powerline-custom")
 (load-x "ruby-custom")
 
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-(global-set-key (kbd "C-c C-m") 'execute-extended-command)
-
-(bind-key "C-o" 'occur)
-(bind-key "M-g" 'goto-line)
-(bind-key "M-n" 'open-line-below)
-(bind-key "M-p" 'open-line-above)
-(bind-key "M-+" 'text-scale-increase)
-(bind-key "M-_" 'text-scale-decrease)
-(bind-key "M-`" 'other-frame)
-
-(bind-key "C-c g" 'google)
-(bind-key "C-c d" 'duplicate-current-line-or-region)
-(bind-key "C-c n" 'clean-up-buffer-or-region)
-(bind-key "C-c r" 'rename-this-buffer-and-file)
-(bind-key "C-c k" 'delete-this-buffer-and-file)
-
-(bind-key "C-M-h" 'backward-kill-word)
-
 ;;; init.el ends here
